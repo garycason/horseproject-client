@@ -1,22 +1,20 @@
-
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './components/Login';
-import Register from './components/Register';
-import Horses from './components/Horses';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import AddHorse from './components/AddHorse';
 
-const App = () => (
+const App = () => {
+  return (
     <Router>
-        <div>
-            <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/horses" element={<Horses />} />
-                <Route path="/" element={<Horses />} />
-            </Routes>
-        </div>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/add-horse" element={<AddHorse />} />
+        {/* Add routes for Login and Register if needed */}
+      </Routes>
     </Router>
-);
+  );
+};
 
 export default App;

@@ -1,16 +1,41 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import 'bulma/css/bulma.min.css';
 
-const NavBar = () => (
-    <nav className="navbar is-primary">
-        <div className="navbar-brand">
-            <Link to="/" className="navbar-item">Home</Link>
-            <Link to="/horses" className="navbar-item">Your Stable</Link>
-            <Link to="/add-horse" className="navbar-item">Add Horse</Link>
-            <Link to="/favorite_horses" className="navbar-item">Favorite Horses</Link>
-            <Link to="/login" className="navbar-item">Login</Link>
+const NavBar = () => {
+  return (
+    <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <Link className="navbar-item" to="/">
+          Horse App
+        </Link>
+      </div>
+
+      <div className="navbar-menu">
+        <div className="navbar-start">
+          <Link className="navbar-item" to="/">
+            Home
+          </Link>
+          <Link className="navbar-item" to="/add-horse">
+            Add Horse
+          </Link>
         </div>
+
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
+              <Link className="button is-light" to="/login">
+                Log in
+              </Link>
+              <Link className="button is-light" to="/register">
+                Register
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
-);
+  );
+};
 
 export default NavBar;
