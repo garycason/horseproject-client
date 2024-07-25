@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bulma/css/bulma.min.css';
 
@@ -15,6 +14,9 @@ const NavBar = () => {
         <div className="navbar-start">
           <Link className="navbar-item" to="/">
             Home
+          </Link>
+          <Link className="navbar-item" to="/your-stable">
+            Your Stable
           </Link>
           <Link className="navbar-item" to="/add-horse">
             Add Horse
