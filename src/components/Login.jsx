@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+//Login.jsx
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { AuthContext } from '../context/AuthContext';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const { setToken } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/login/', {
+            const response = await axios.post('http://localhost:8000/api/auth/login/', {
                 username,
                 password,
             });
+            setToken(response.data.token);
             localStorage.setItem('token', response.data.token);
-            // Redirect to dashboard or homepage
+            navigate('/your-stable'); // Redirect to the stable or homepage
         } catch (error) {
             console.error('Error logging in:', error);
         }
@@ -56,3 +62,4 @@ const Login = () => {
 };
 
 export default Login;
+
