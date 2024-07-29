@@ -1,4 +1,3 @@
-//YourStable.jsx
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -43,7 +42,7 @@ const YourStable = () => {
   const handleFavorite = async (id) => {
     const csrfToken = getCookie('csrftoken');
     try {
-      await axios.post('http://localhost:8000/api/favorite_horses/', {
+      await axios.post('http://localhost:8000/api/favoritehorses/', {
         horse: id
       }, {
         headers: {

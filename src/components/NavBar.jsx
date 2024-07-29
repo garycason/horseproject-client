@@ -1,6 +1,5 @@
-//NavBar.jsx
-import { Link } from 'react-router-dom';
-import 'bulma/css/bulma.min.css';
+import { Link } from 'react-router-dom'
+import 'bulma/css/bulma.min.css'
 
 const NavBar = () => {
   return (
@@ -22,6 +21,9 @@ const NavBar = () => {
           <Link className="navbar-item" to="/add-horse">
             Add Horse
           </Link>
+          <Link className="navbar-item" to="/favorite-horses">
+            Favorite Horses
+          </Link>
         </div>
 
         <div className="navbar-end">
@@ -41,4 +43,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default NavBar
