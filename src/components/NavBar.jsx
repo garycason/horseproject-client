@@ -1,3 +1,4 @@
+//NavBar.jsx
 import { Link } from 'react-router-dom';
 import 'bulma/css/bulma.min.css';
 
