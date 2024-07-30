@@ -11,16 +11,16 @@ const Horses = () => {
 
     useEffect(() => {
         fetchHorses()
-    }, []);
+    }, [])
 
     const fetchHorses = async () => {
         try {
             const response = await axios.get('http://localhost:8000/api/horses/', {
                 headers: { Authorization: `Token ${localStorage.getItem('token')}` }
-            });
-            setHorses(response.data);
+            })
+            setHorses(response.data)
         } catch (error) {
-            console.error('Error fetching horses:', error);
+            console.error('Error fetching horses:', error)
         }
     };
 
@@ -34,12 +34,12 @@ const Horses = () => {
                 total_earnings: totalEarnings,
             }, {
                 headers: { Authorization: `Token ${localStorage.getItem('token')}` }
-            });
-            fetchHorses();
+            })
+            fetchHorses()
         } catch (error) {
-            console.error('Error adding horse:', error);
+            console.error('Error adding horse:', error)
         }
-    };
+    }
 
     return (
         <div>
@@ -86,7 +86,7 @@ const Horses = () => {
                 <button type="submit">Add Horse</button>
             </form>
         </div>
-    );
-};
+    )
+}
 
 export default Horses
