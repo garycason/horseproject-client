@@ -1,7 +1,11 @@
-import { Link } from 'react-router-dom'
-import 'bulma/css/bulma.min.css'
+import { Link } from 'react-router-dom';
+import 'bulma/css/bulma.min.css';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
 
 const NavBar = () => {
+  const { username } = useContext(AuthContext);
+
   return (
     <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
@@ -12,9 +16,7 @@ const NavBar = () => {
 
       <div className="navbar-menu">
         <div className="navbar-start">
-          <Link className="navbar-item" to="/">
-            Home
-          </Link>
+          
           <Link className="navbar-item" to="/your-stable">
             Your Stable
           </Link>
@@ -27,6 +29,11 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-end">
+          {username && (
+            <div className="navbar-item">
+              <span>Welcome, {username}</span>
+            </div>
+          )}
           <div className="navbar-item">
             <div className="buttons">
               <Link className="button is-light" to="/login">
@@ -43,4 +50,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar
+export default NavBar;

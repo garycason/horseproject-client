@@ -12,9 +12,11 @@ const FavoriteHorses = () => {
     try {
       const response = await axios.get('http://localhost:8000/api/favoritehorses/', {
         headers: {
+          // Ensure the request includes the user's token to authenticate the user
           Authorization: `Token ${localStorage.getItem('token')}`
         }
       });
+      // Set the state with the response data which contains only the favorite horses of the authenticated user
       setFavoriteHorses(response.data)
     } catch (error) {
       console.error('Error fetching favorite horses:', error)
@@ -53,3 +55,4 @@ const FavoriteHorses = () => {
 }
 
 export default FavoriteHorses
+
