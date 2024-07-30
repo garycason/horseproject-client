@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
         </p>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
