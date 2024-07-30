@@ -1,5 +1,5 @@
 //Login.jsx
-import React, { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from '../context/AuthContext';
@@ -21,7 +21,7 @@ const Login = () => {
             localStorage.setItem('token', response.data.token);
             navigate('/your-stable'); // Redirect to the stable or homepage
         } catch (error) {
-            console.error('Error logging in:', error);
+            console.error('Error logging in:', error)
         }
     };
 
@@ -61,5 +61,5 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Login
 

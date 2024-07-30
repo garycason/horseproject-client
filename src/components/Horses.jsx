@@ -1,16 +1,16 @@
 //Horses.jsx
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Horses = () => {
-    const [horses, setHorses] = useState([]);
-    const [name, setName] = useState('');
-    const [dateOfBirth, setDateOfBirth] = useState('');
-    const [totalRaces, setTotalRaces] = useState('');
-    const [totalEarnings, setTotalEarnings] = useState('');
+    const [horses, setHorses] = useState([])
+    const [name, setName] = useState('')
+    const [dateOfBirth, setDateOfBirth] = useState('')
+    const [totalRaces, setTotalRaces] = useState('')
+    const [totalEarnings, setTotalEarnings] = useState('')
 
     useEffect(() => {
-        fetchHorses();
+        fetchHorses()
     }, []);
 
     const fetchHorses = async () => {
@@ -89,4 +89,4 @@ const Horses = () => {
     );
 };
 
-export default Horses;
+export default Horses
